@@ -1,11 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { onLoginUser } from '../services/api';
 
 const Login = () => {
     const pageRedirect = useNavigate();
+    const [email, setemail] = useState('')
+    const [password, setPassword] = useState('')
 
-    const goToUsers = () => {
-        pageRedirect('/users')
+    const goToUsers = async () => {
+        const response = await onLoginUser(email, password);
+        if(response){
+            pageRedirect('/users')
+        }
+
+    }
+    const onchangeEmail = (e) => {
+        setemail(e.target.value);
+    }
+    const onChangePassword = (e) => {
+        setPassword(e.target.value)
     }
   return (
     <>
@@ -15,20 +28,20 @@ const Login = () => {
                 <div className="lignForm">
                     <h1>Login to your account</h1>
                     <p>See what is going on to your business</p>
-                    <form action="">
+                    <form action={goToUsers}>
                         <div className='input'>
-                            <input type="email" name="" id="" required/>
+                            <input onChange={onchangeEmail} value={email} type="email" required/>
                             <label htmlFor="email">Email </label>
                         </div>
                         <div className='input'>
-                            <input type="password" name="" id="" />
+                            <input onChange={onChangePassword} value={password} type="password" />
                             <label htmlFor="password">Password </label>
                         </div>
 
                         <div className="forgot">
                             <span>
-                                <input type="checkbox" name="checkbox" id="" />
-                                <label for='checkbox'>Remember Me</label>
+                                <input type="checkbox" name="checkbox"/>
+                                <label htmlFor='checkbox'>Remember Me</label>
                             </span>
                             <span>
                                 <p>Forgot Password?</p>
