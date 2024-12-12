@@ -36,7 +36,7 @@ h6{
 }
 header{
   background-color: #f5f5f5;
-  padding: 20px 15px;
+  padding: 30px 15px;
 }
 .logo{
   text-transform: uppercase;
@@ -51,12 +51,14 @@ header .header{
   justify-content: space-between;
 }
 nav a{
-  padding: 20px 30px;
+  font-size: 14px;
+  padding: 30px 30px;
   text-decoration: none;
   color: #111111;
 }
 nav a.active{
   background-color: #ffffff;
+  font-weight: 800;
 }
 footer{
   z-index: 999;
@@ -78,8 +80,8 @@ footer p{
   align-items: center;
 }
 .loginleft{
-  background: url(../src/assets/loginImg.jpg) no-repeat center center;
-  background-size: cover;
+  background: #f5f5f5 url('../src/assets/loginImg.png') no-repeat center center;
+  background-size: contain;
   height: 100vh;
 
 }

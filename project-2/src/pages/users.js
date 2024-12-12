@@ -19,19 +19,19 @@ const Users = () => {
     <>
       <Layout>
           <div className="usersPage container">
-            <h2>Users </h2>
+                <h2>Users</h2>
                 <ul>
                 {
                     users.length === 0 ? (<p>Loading...</p>) : (
                         users.map((item) => {
-                        const {avatar, name, email, id} = item
+                        const {avatar, name, email, id} = item;
                         return <>
                             <li key={id}>
-                            <img src={avatar} alt="" />
-                            <div className='userContent'>
-                            <p>{name}</p>
-                            <p>{email}</p>
-                            </div>
+                                <img src={avatar} alt="" />
+                                <div className='userContent'>
+                                    <p>{name}</p>
+                                    <p>{email}</p>
+                                </div>
                             </li>
                         </>
                 })
