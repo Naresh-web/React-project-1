@@ -7,7 +7,7 @@ const NavLinks = () => {
             <nav>
                 <NavLink to='/home'>Home</NavLink>
                 <NavLink to='/users'>Users</NavLink>
-                <NavLink to='/products'>Prodcuts</NavLink>
+                <NavLink to='/products'>Products</NavLink>
             </nav>
         </>
     )

@@ -21,7 +21,7 @@ const Profile = () => {
         navigate('/')
       }
     const onProfileGet = async() =>{
-        const token = localStorage.getItem('token')
+        const token = myToken
         const res = await getProfile(token);
         if(res){
             setProfile(res)

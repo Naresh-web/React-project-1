@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { fetchDetailsById } from "../services/api";
 
 const UserDetails = () =>{
@@ -17,8 +17,22 @@ const UserDetails = () =>{
     }, [])
     return (
         <>
-            <div><img src={userData.avatar} alt="" /></div>
-            <div>{userData.email}</div>
+            <div className="userDetails container">
+                <div className="detailsCard">
+                    <div className="imgArea">
+                    <img src={userData.avatar} alt="" />
+                    </div>
+                    <div className="contentArea">
+                    <p>Name: {userData.name}</p>
+                    <p>Email: {userData.email}</p>
+                    <p>Role: {userData.role}</p>
+                    </div>
+                </div>
+
+            <Link to='/users'>
+                <button className="button-grey-tprnt">Back to Users page</button>
+            </Link>
+            </div>
         </>
     )
 }
