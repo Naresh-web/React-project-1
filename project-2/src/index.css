@@ -190,3 +190,66 @@ footer p{
 }
 /** Users Page End**/
 
+/** Profile Area **/
+.profileMain{
+  position: relative;
+}
+.profileCard{
+  background-color: #413c3c;
+  width: 400px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  transform: translate(-45%, 100%);
+  bottom: 0;
+}
+.profileBarHead {
+  width: 35px!important;
+  height: 35px!important;
+  margin-bottom: 0;
+  position: relative;
+}
+.cardTop{
+  padding: 40px 0;
+  background-color: white;
+}
+.cardBottom{
+  padding: 15px;
+}
+.profileArea{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -55px;
+}
+.profileDetails{
+  margin: auto;
+  text-align: center;
+  color: white;
+}
+.profileDetails p{
+  margin: 0 ;
+  font-size: 14px;
+}
+.profileDetails h5{
+  margin: 0;
+  font-size: 16px;
+}
+.profile, .profileBarHead {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #f5f5f5;
+  margin-bottom: 15px;
+}
+.profile img, .profileBarHead img{
+  max-width: 100%;
+}
+.addData{
+  color: white;
+  padding-top: 30px;
+}
+

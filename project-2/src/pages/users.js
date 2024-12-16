@@ -2,9 +2,15 @@ import React, { useEffect } from 'react'
 import Layout from '../components/layout';
 import { api } from '../services/api';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Users = () => {
     const [users, setUsers] = useState([]);
+    const router = useNavigate();
+
+    const fetchUsersById = async (id) =>{
+        router(`/userDetails/${id}`)
+    }
 
     const fetchUsers = async () => {
         const userData = await api('https://api.escuelajs.co/api/v1/users')
@@ -26,7 +32,7 @@ const Users = () => {
                         users.map((item) => {
                         const {avatar, name, email, id} = item;
                         return <>
-                            <li key={id}>
+                            <li key={id} onClick={() => fetchUsersById(id)}>
                                 <img src={avatar} alt="" />
                                 <div className='userContent'>
                                     <p>{name}</p>

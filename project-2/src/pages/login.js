@@ -9,7 +9,8 @@ const Login = () => {
 
     const goToUsers = async () => {
         const response = await onLoginUser(email, password);
-        if(response){
+        if(response?.access_token){
+            localStorage.setItem('token', response.access_token)
             pageRedirect('/users')
         }
 
@@ -18,39 +19,39 @@ const Login = () => {
         setemail(e.target.value);
     }
     const onChangePassword = (e) => {
-        setPassword(e.target.value)
+        setPassword(e.target.value);
     }
   return (
     <>
         <div className="login">
             <section className='loginleft flex-1'></section>
-            <section className='loginRight flex-1'>
-                <div className="lignForm">
-                    <h1>Login to your account</h1>
-                    <p>See what is going on to your business</p>
-                    <form action={goToUsers}>
-                        <div className='input'>
-                            <input onChange={onchangeEmail} value={email} type="email" required/>
-                            <label htmlFor="email">Email </label>
-                        </div>
-                        <div className='input'>
-                            <input onChange={onChangePassword} value={password} type="password" />
-                            <label htmlFor="password">Password </label>
-                        </div>
+                <section className='loginRight flex-1'>
+                    <div className="lignForm">
+                        <h1>Login to your account</h1>
+                        <p>See what is going on to your business</p>
+                        <form action={goToUsers}>
+                            <div className='input'>
+                                <input onChange={onchangeEmail} value={email} type="email" required/>
+                                <label htmlFor="email">Email </label>
+                            </div>
+                            <div className='input'>
+                                <input onChange={onChangePassword} value={password} type="password" />
+                                <label htmlFor="password">Password </label>
+                            </div>
 
-                        <div className="forgot">
-                            <span>
-                                <input type="checkbox" name="checkbox"/>
-                                <label htmlFor='checkbox'>Remember Me</label>
-                            </span>
-                            <span>
-                                <p>Forgot Password?</p>
-                            </span>
-                        </div>
-                        <button onClick={goToUsers} type='sumbit' className='button'>Login</button>
-                    </form>
-                </div>
-            </section>
+                            <div className="forgot">
+                                <span>
+                                    <input type="checkbox" name="checkbox"/>
+                                    <label htmlFor='checkbox'>Remember Me</label>
+                                </span>
+                                <span>
+                                    <p>Forgot Password?</p>
+                                </span>
+                            </div>
+                            <button onClick={goToUsers} type='submit' className='button'>Login</button>
+                        </form>
+                    </div>
+                </section>
         </div>
     </>
   )
