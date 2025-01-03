@@ -15,6 +15,7 @@ const UserDetails = () =>{
     useEffect(() => {
         fetchUserDetails();
     }, [])
+    
     return (
         <>
             <div className="userDetails container">

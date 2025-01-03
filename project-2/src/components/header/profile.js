@@ -21,7 +21,7 @@ const Profile = () => {
         navigate('/')
       }
     const onProfileGet = async() =>{
-        const token = myToken
+        const token = myToken;
         const res = await getProfile(token);
         if(res){
             setProfile(res)
@@ -37,23 +37,23 @@ const Profile = () => {
             <img src={profile?.avatar} alt="" />
         </div>
         {visible && (
-        <div className="profileCard" >
-            <div className="cardTop"></div>
-            <div className="cardBottom">
-                <div className="profileArea">
-                <div className="profile">
-                    <img src={profile?.avatar} alt="" />
-                </div>
-                <div className="profileDetails">
-                    <h5>{profile?.name}</h5>
-                    <p>{profile?.email}</p>
-                </div>
-                </div>
-                <div className="addData">
-                    <div onClick={logout}>Logout</div>
+            <div className="profileCard" >
+                <div className="cardTop"></div>
+                <div className="cardBottom">
+                    <div className="profileArea">
+                    <div className="profile">
+                        <img src={profile?.avatar} alt="" />
+                    </div>
+                    <div className="profileDetails">
+                        <h5>{profile?.name}</h5>
+                        <p>{profile?.email}</p>
+                    </div>
+                    </div>
+                    <div className="addData">
+                        <div onClick={logout}>Logout</div>
+                    </div>
                 </div>
             </div>
-        </div>
         )}
         </div>
     </>
