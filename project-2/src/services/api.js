@@ -30,7 +30,7 @@ export const onLoginUser = async (email, password) => {
     try{
         const response = await fetch('https://api.escuelajs.co/api/v1/auth/login', {
             method: 'post',
-            headers:{
+            headers: {
                 'Content-Type':'application/json'
             },
             body: JSON.stringify({email, password})
